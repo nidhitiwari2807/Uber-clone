@@ -1,14 +1,31 @@
-import mongoose from 'mongoose';
-import {env} from "./env.js";
+// import mongoose from 'mongoose';
+// // import { env } from './env';
+// import env from './env.js';
+
+
+
+// export const connectDB = async () => {
+    
+//     try {
+//        await mongoose.connect(env.MONGODB_URL);
+//        console.log("MONGODB connected successfully -->", mongoose.connection) 
+//     } catch (error) {
+//         console.error("MONGODB connect failed --->", error.message);
+//         console.error("stack trace:", error.Stack);
+//         process.exit(1)
+//     }
+// };
+
+
+import mongoose from "mongoose";
+import { env } from "./env.js";
 
 export const connectDB = async () => {
-    
-    try {
-       await mongoose.connect(env.MONGODB_URL);
-       console.log("MONGODB connected successfully -->", mongoose.connection) 
-    } catch (error) {
-        console.error("MONGODB connect failed --->", error.message);
-        console.error("stack trace:", error.Stack);
-        process.exit(1)
-    }
+  try {
+    await mongoose.connect(env.MONGODB_URL);
+    console.log("✅ MongoDB connected");
+  } catch (error) {
+    console.error("❌ Mongo error:", error.message);
+    process.exit(1);
+  }
 };

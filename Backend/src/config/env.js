@@ -12,8 +12,9 @@ requiredEnvVars.forEach((envVar)=>{
 export const env = {
     PORT: process.env.PORT,
     AUTHOR_NAME: process.env.AUTHOR_NAME,
-    MONGODB_URL: process.env.MONGODB_URL
+    MONGODB_URL: process.env.MONGODB_URL,
+     JWT_SECRET: process.env.JWT_SECRET,
+  JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN
 
 };
 
-export default env;
